@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Shooting1 : MonoBehaviour
+{
+
+    public Transform FirePoint;
+    public GameObject BulletPrefab;
+    public float BulletSpeed = 20f;
+
+
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        if (Input.GetButtonDown("Fire1")) //ISSUE?
+        {
+            Shoot();
+        }
+
+        void Shoot()
+        {
+            GameObject bullet = Instantiate(BulletPrefab,FirePoint.position,FirePoint.rotation); // Spawns in bullet
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>(); // Get Rigibody 2D Bullet
+            rb.AddForce(FirePoint.up * BulletSpeed, ForceMode2D.Impulse); //Adding Force on Bullet
+
+
+        }
+        
+    }
+}
