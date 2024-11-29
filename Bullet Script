@@ -16,14 +16,14 @@ public class Bullet : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D HitInfo) // Shooting Damage IGNORE THIS ONE
+    private void OnTriggerEnter2D(Collider2D HitInfo) // Shooting Damage IGNORE THIS ONE (Get rid of comments if adding Player Health Script)
     {
         Debug.Log(HitInfo.name);
-        EnemyHealth enemy = HitInfo.GetComponent<EnemyHealth>();
-        if(enemy != null)
-        {
-            enemy.EnemyDamageTaken(damage);
-        }
+        // EnemyHealth enemy = HitInfo.GetComponent<EnemyHealth>();
+        // if(enemy != null)
+       // {
+        //     enemy.EnemyDamageTaken(damage);
+        // }
         Destroy(gameObject);
         
     }
